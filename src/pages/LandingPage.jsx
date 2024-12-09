@@ -1,25 +1,31 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import NavBar from "../components/layout/Navigation/NavBar";
 import { CrxContainer } from "../components/styledcomponents/globalStyles";
 import BannerSection from "./BannerSection/BannerSection";
 import AboutSection from "./AboutSection/AboutSection";
 import FogEffect from "./FogEffect";
 import PricingSection from "./PricingSection/PricingSection";
-import KeySection from "./KeySection/KeySection";
+import MissionSection from "./MissionSection/MissionSection";
 import ListinSection from "./ListinSection/ListinSection";
+
+// Lazy-load the Spline component to improve initial load time
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const bannerHeight = window.innerHeight; // Height of the banner section
-      const scrollTop = window.scrollY; // Current scroll position
+    let timeoutId;
 
-      // Calculate the scroll progress for zoom and fade
-      const progress = Math.min(scrollTop / bannerHeight, 1); // Clamp between 0 and 1
-      setScrollProgress(progress);
+    const handleScroll = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const bannerHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        const progress = Math.min(scrollTop / bannerHeight, 1); // Clamp between 0 and 1
+        setScrollProgress(progress);
+      }, 50); // Throttle scroll updates
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,13 +36,20 @@ const LandingPage = () => {
 
   return (
     <CrxContainer className="overflow-x-hidden" bg="#000607">
+      {/* Lazy-load Spline with a fallback */}
+      <Suspense fallback={<div style={{ height: "100vh", backgroundColor: "#000607" }}>Loading...</div>}>
+        <Spline className="spline-container" scene="https://prod.spline.design/vGYiA9vexcS0gJF5/scene.splinecode" />
+      </Suspense>
+
       <FogEffect />
       <NavBar />
       <BannerSection scrollProgress={scrollProgress} />
-      <ListinSection/>
       <AboutSection ref={aboutRef} />
-      {/* <KeySection/> */}
-      <PricingSection/>
+      <ListinSection />
+      {/* Uncomment if KeySection is required */}
+      {/* <KeySection /> */}
+      <PricingSection />
+      <MissionSection />
     </CrxContainer>
   );
 };

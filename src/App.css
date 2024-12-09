@@ -24,3 +24,8 @@
 body {
     margin: unset !important;
 }
+
+.spline-container {
+    position: absolute !important;
+    opacity: 0.6 !important;
+  }

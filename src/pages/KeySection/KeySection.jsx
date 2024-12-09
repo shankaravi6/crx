@@ -52,7 +52,7 @@ const KeySection = () => {
                   High security and transparency through blockchain technology:
                 </CrxSubTitle2>
                 <CrxTypography>
-                  One Bond utilizes the Binance Smart Chain (BSC) to ensure
+                  CRX utilizes the Binance Smart Chain (BSC) to ensure
                   topnotch security and transparency. Every transaction is
                   immutable and traceable on the blockchain, providing users
                   with confidence in a secure, decentralized ecosystem that
@@ -64,7 +64,7 @@ const KeySection = () => {
                 Accessibility and ease of use:
                 </CrxSubTitle2>
                 <CrxTypography>
-                Designed for seamless integration, One Bond offers a user-friendly platform that ensures easy access to decentralized finance (DeFi) opportunities. With low transaction fees and fast processing times, users worldwide can participate in staking and other financial activities without any barriers.
+                Designed for seamless integration, CRX offers a user-friendly platform that ensures easy access to decentralized finance (DeFi) opportunities. With low transaction fees and fast processing times, users worldwide can participate in staking and other financial activities without any barriers.
                 </CrxTypography>
               </CrxFlex>
               </CrxFlex>

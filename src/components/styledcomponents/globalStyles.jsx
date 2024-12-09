@@ -221,22 +221,74 @@ export const CrxForm = styled.form`
   height: ${(props) => (props.h ? props.h : "auto")};
 `;
 
+export const CrxMainTitle = CrxComponent(styled.h1`
+  font-family: "Satoshi-Med", sans-serif;
+  font-size: ${(props) => (props.fs ? props.fs : "clamp(2rem, 10vw, 15rem)")};
+  text-align: center;
+  color: ${(props) => (props.color ? props.color : props.palette.text.title)};
+  animation: lights 5s 750ms linear infinite;
+  letter-spacing: ${(props) => (props.ls ? props.ls : "unset")};
+
+
+  @keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+
+    30% {
+      color: hsl(230, 80%, 90%);
+      text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+
+    40% {
+      color: hsl(230, 100%, 95%);
+      text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+  }
+`);
+
 export const CrxTitle = CrxComponent(styled.h1`
   font-family: "Satoshi-Med", sans-serif;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(2rem, 10vw, 15rem)")};
   text-align: center;
   letter-spacing: ${(props) => (props.ls ? props.ls : "unset")};
-  color: ${(props) => (props.color ? props.color : props.palette.text.title)};
+  color: ${(props) => (props.color ? props.color : props.palette.text.low)};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
-  animation: glow 5s ease-in-out infinite alternate;
+  /* animation: glow 5s ease-in-out infinite alternate; */
 
   @media screen and (max-width: 960px) {
     text-align: center;
     margin-left: ${(props) => (props.s_ml ? props.s_ml : "30px")};
   }
 
-  @keyframes glow {
+  /* @keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
         0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
@@ -246,7 +298,7 @@ export const CrxTitle = CrxComponent(styled.h1`
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
         0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
-  }
+  } */
   /* &::before {
     content: "";
     display: inline-block;
@@ -379,7 +431,7 @@ export const CrxNavText = CrxComponent(styled.p`
   font-family: "Satoshi-Reg", serif;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(1rem, 5vw, 1rem)")};
   text-align: center;
-  color: ${(props) => (props.color ? props.color : props.palette.text.mid)};
+  color: ${(props) => (props.color ? props.color : props.palette.text.low)};
   transition: all 0.5s ease;
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   background: ${(props) => (props.bg ? props.bg : "unset")};

@@ -9,7 +9,7 @@ const ListinSection = () => {
     <CrxSection>
       <Fade>
         <CrxFlex dir="column" gap="5px" p='0 0 5rem 0'>
-          <CrxSubTitle2 fs="5rem">Our Listing</CrxSubTitle2>
+          <CrxSubTitle fs="5rem">Our Listing</CrxSubTitle>
           <CrxTypography className='w-[1200px]' fs="1.75rem">
           Running a successful business means more than just a website. That's why we cover all your design needs, so you don't have to go anywhere else.
           </CrxTypography>

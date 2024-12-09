@@ -5,8 +5,12 @@ import {
   CrxFlex,
   CrxSubTitle,
   CrxTypography,
+  CrxMainTitle,
+  CrxTitle,
 } from "../../components/styledcomponents/globalStyles";
 import CrxButton from "../../components/common/CrxButton";
+
+
 
 const BannerSection = ({ scrollProgress }) => {
   const scale = 1 + scrollProgress * 0.5; // Scale the section as you scroll
@@ -30,8 +34,8 @@ const BannerSection = ({ scrollProgress }) => {
           dir="column"
           m="-155px 0 0 0"
         >
-          <CrxSubTitle fs="5rem">CRX FOR LIFE</CrxSubTitle>
-          <CrxTypography fs="2rem">
+          <CrxMainTitle fs="5rem" ls='0.5rem'>CRX FOR LIFE</CrxMainTitle>
+          <CrxTypography color='#b1e7dd' fs="2rem">
             Welcome to CRX, where the future of digital currency and
             decentralized finance comes to life.
           </CrxTypography>
