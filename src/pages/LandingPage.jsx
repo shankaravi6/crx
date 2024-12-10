@@ -7,9 +7,10 @@ import FogEffect from "./FogEffect";
 import PricingSection from "./PricingSection/PricingSection";
 import MissionSection from "./MissionSection/MissionSection";
 import ListinSection from "./ListinSection/ListinSection";
+import KeySection from "./KeySection/KeySection";
 
 // Lazy-load the Spline component to improve initial load time
-const Spline = lazy(() => import('@splinetool/react-spline'));
+// const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -35,19 +36,17 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <CrxContainer className="overflow-x-hidden" bg="#000607">
+    <CrxContainer bg="#000607">
       {/* Lazy-load Spline with a fallback */}
-      <Suspense fallback={<div style={{ height: "100vh", backgroundColor: "#000607" }}>Loading...</div>}>
+      {/* <Suspense fallback={<div style={{ height: "100vh", backgroundColor: "#000607" }}>Loading...</div>}>
         <Spline className="spline-container" scene="https://prod.spline.design/vGYiA9vexcS0gJF5/scene.splinecode" />
-      </Suspense>
-
+      </Suspense> */}
       <FogEffect />
       <NavBar />
       <BannerSection scrollProgress={scrollProgress} />
       <AboutSection ref={aboutRef} />
       <ListinSection />
-      {/* Uncomment if KeySection is required */}
-      {/* <KeySection /> */}
+      <KeySection />
       <PricingSection />
       <MissionSection />
     </CrxContainer>

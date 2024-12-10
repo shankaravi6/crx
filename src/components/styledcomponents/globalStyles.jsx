@@ -51,7 +51,7 @@ export const CrxSection = CrxComponent(styled.section`
   width: 100%;
   height: ${(props) => (props.h ? props.h : "unset")};
   max-width: ${(props) => (props.mw ? props.mw : "1300px")};
-  margin: 0 auto 0 auto;
+  margin: ${(props) => props.m ? props.m : '0 auto'};
   background: ${(props) => (props.bg ? props.bg : `unset`)};
   padding: ${(props) => (props.p ? props.p : "unset")};
   @media screen and (max-width: 970px) {
@@ -395,7 +395,7 @@ export const CrxSubTitle = CrxComponent(styled.h1`
 export const CrxSubTitle2 = CrxComponent(styled.h1`
   font-family: "Satoshi-Reg", sans-serif;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(1rem, 5vw, 2.5rem)")};
-  text-align: ${(props) => (props.ta ? props.ta : "center")};
+  text-align: ${(props) => (props.ta ? props.ta : "left")};
   letter-spacing: ${(props) => (props.ls ? props.ls : "0px")};
   color: ${(props) => (props.color ? props.color : "transparent")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
@@ -481,4 +481,8 @@ export const CrxSpan = CrxComponent(styled.span`
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   font-style: ${(props) => (props.fst ? props.fst : "normal")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
+`);
+
+export const CrxCustDiv = CrxComponent(styled.div`
+  display: block;
 `);

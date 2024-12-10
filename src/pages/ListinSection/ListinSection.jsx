@@ -6,7 +6,7 @@ import './ListinSection.css';
 
 const ListinSection = () => {
   return (
-    <CrxSection>
+    <CrxSection p='5rem 0'>
       <Fade>
         <CrxFlex dir="column" gap="5px" p='0 0 5rem 0'>
           <CrxSubTitle fs="5rem">Our Listing</CrxSubTitle>
