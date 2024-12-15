@@ -14,11 +14,13 @@ import {
   CrxCard,
 } from "../../components/styledcomponents/globalStyles";
 import { Fade } from "react-awesome-reveal";
+import Spline from '@splinetool/react-spline';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const KeySection = () => {
   const lenisRef = useRef(null);
   const [leftTitle, setLeftTitle] = useState(
-    "High security and transparency through blockchain technology"
+    "https://lottie.host/36b4d9c4-1e55-49b4-ae84-ee0d43d8ca8a/ecg8iDsHIJ.lottie"
   ); // Default left title
 
   useEffect(() => {
@@ -77,8 +79,14 @@ const KeySection = () => {
         <CrxBox className="flex w-full gap-20">
           {/* Left Side: Fully Sticky */}
           <CrxFlex w="40%" h="100vh" className="sticky top-0">
-            <CrxCard w="auto" h="auto" p="2rem">
-              <CrxSubTitle2 ta="center">{leftTitle}</CrxSubTitle2>
+            <CrxCard w="500px" h="400px" p="2rem">
+            <DotLottieReact
+      src={leftTitle}
+      loop
+      autoplay
+    />
+            {/* <Spline scene={leftTitle} /> */}
+              {/* <CrxSubTitle2 ta="center">{leftTitle}</CrxSubTitle2> */}
             </CrxCard>
           </CrxFlex>
 
@@ -89,11 +97,11 @@ const KeySection = () => {
               h="100vh"
               dir="column"
               className="fea_tab"
-              data-title="High security and transparency through blockchain technology"
+              data-title="https://lottie.host/36b4d9c4-1e55-49b4-ae84-ee0d43d8ca8a/ecg8iDsHIJ.lottie"
               gap="1.5rem"
               al="start"
             >
-              {/* <CrxSubTitle2>High security and transparency through blockchain technology</CrxSubTitle2> */}
+              <CrxSubTitle2>High security and transparency through blockchain technology</CrxSubTitle2>
               <CrxTypography>
                 CRX utilizes the Binance Smart Chain (BSC) to ensure topnotch
                 security and transparency. Every transaction is immutable and
@@ -108,10 +116,10 @@ const KeySection = () => {
               h="100vh"
               dir="column"
               className="fea_tab"
-              data-title="Accessibility and ease of use"
+              data-title="https://lottie.host/a0eb3184-bad4-4d16-aff4-4de118fbc4ff/4Oo3ZvbvPb.lottie"
               gap="1.5rem"
             >
-              {/* <CrxSubTitle2>Accessibility and ease of use</CrxSubTitle2> */}
+              <CrxSubTitle2>Accessibility and ease of use</CrxSubTitle2>
               <CrxTypography>
                 Designed for seamless integration, CRX offers a user-friendly
                 platform that ensures easy access to decentralized finance
@@ -126,10 +134,10 @@ const KeySection = () => {
               h="100vh"
               dir="column"
               className="fea_tab"
-              data-title="Daily ROI distribution"
+              data-title="https://lottie.host/96a4d787-dc18-40da-9de2-aa6ebb27829b/tmBZefpwnt.lottie"
               gap="1.5rem"
             >
-              {/* <CrxSubTitle2>Daily ROI distribution</CrxSubTitle2> */}
+              <CrxSubTitle2>Daily ROI distribution</CrxSubTitle2>
               <CrxTypography>
                 CRX provides daily Return on Investment (ROI) to its users,
                 rewarding their participation in the platform. This daily
@@ -144,10 +152,10 @@ const KeySection = () => {
               h="100vh"
               dir="column"
               className="fea_tab"
-              data-title="Staking opportunities with multiple plans"
+              data-title="https://lottie.host/659786cb-e7a6-4bef-ae45-08e4b39cfaef/SdTrwjuLwg.lottie"
               gap="1.5rem"
             >
-              {/* <CrxSubTitle2>Staking opportunities with multiple plans</CrxSubTitle2> */}
+              <CrxSubTitle2>Staking opportunities with multiple plans</CrxSubTitle2>
               <CrxTypography>
                 CRX offers a variety of staking plans catering to different risk
                 profiles and investment goals. Users can choose from Basic,

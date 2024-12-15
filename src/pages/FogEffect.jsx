@@ -28,7 +28,7 @@ const FogEffect = () => {
         speed: Math.random() * 0.5 + 0.2, // Speed of movement
         waveOffset: Math.random() * Math.PI * 2, // Starting wave offset
         waveAmplitude: Math.random() * 10 + 10, // Zigzag amplitude
-        waveFrequency: Math.random() * 0.003 + 0.001, // Wave frequency
+        waveFrequency: Math.random() * 0.003 + 0.1, // Wave frequency
         color: fogColors[i % fogColors.length], // Alternate colors
       });
     }

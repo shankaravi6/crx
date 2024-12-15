@@ -48,10 +48,14 @@ const AboutSection = forwardRef((props, ref) => {
         }}
       >
         <CrxBox w="100%" className="flex-col gap-5" ref={ref}>
+          <Fade direction="up">
           <CrxSubTitle>About Us</CrxSubTitle>
+          </Fade>
+          <Fade direction="up">
           <CrxTypography className='glass-shade' style={gradientStyle}>
             CRX is a digital currency that operates as a globally distributed network of computers adhering to the CRX protocol. Serving as a robust infrastructure, CRX empowers communities, applications, organizations, and digital assets, facilitating their creation and utilization. Accessible from anywhere and at any time, you can establish a CRX account to delve into a realm of applications or develop your own. A key breakthrough lies in the ability to engage in these activities without reliance on a central authority capable of altering rules or limiting access.
           </CrxTypography>
+          </Fade>
         </CrxBox>
         <CrxBox w="100%" h="500px">
           <Spline scene="https://prod.spline.design/VLYqo-y3jEqHlsCC/scene.splinecode" />
