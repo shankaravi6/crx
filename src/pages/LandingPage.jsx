@@ -8,6 +8,7 @@ import PricingSection from "./PricingSection/PricingSection";
 import MissionSection from "./MissionSection/MissionSection";
 import ListinSection from "./ListinSection/ListinSection";
 import KeySection from "./KeySection/KeySection";
+import RoadmapSection from "./RoadmapSection/RoadmapSection";
 
 // Lazy-load the Spline component to improve initial load time
 // const Spline = lazy(() => import('@splinetool/react-spline'));
@@ -43,12 +44,13 @@ const LandingPage = () => {
       </Suspense> */}
       <FogEffect />
       <NavBar />
-      <BannerSection scrollProgress={scrollProgress} />
+      <BannerSection />
       <AboutSection ref={aboutRef} />
       <ListinSection />
+      <RoadmapSection/>
       <KeySection />
-      <PricingSection />
       <MissionSection />
+      <PricingSection />
     </CrxContainer>
   );
 };
