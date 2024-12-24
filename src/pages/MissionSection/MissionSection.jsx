@@ -27,8 +27,8 @@ const MissionSection = () => {
                 <CrxFlex gap='1rem' dir='column' jc='start' al='start'>
                 <Fade direction="up" delay={1}>
                 <CrxFlex jc='start' al='start' gap='1rem'>
-                    <CrxGlassCard bg='rgb(169 30 100 / 43%)' w='50px' h='50px'>
-                        <CrxFlex h='100%'><GrAchievement color='#e7e3e3bf' fontSize='22px' /></CrxFlex>
+                    <CrxGlassCard w='50px' h='50px'>
+                        <CrxFlex h='100%'><GrAchievement fontSize='22px' /></CrxFlex>
                     </CrxGlassCard>
                     <CrxSubTitle2 fs='2rem'>Mission</CrxSubTitle2>
                 </CrxFlex>
@@ -44,8 +44,8 @@ const MissionSection = () => {
                 <CrxFlex gap='1rem' dir='column' jc='start' al='start'>
                 <Fade direction="up" delay={1}>
                 <CrxFlex jc='start' al='start' gap='1rem'>
-                    <CrxGlassCard bg='rgb(169 30 100 / 43%)' w='50px' h='50px'>
-                        <CrxFlex h='100%'><GrGrow color='#e7e3e3bf' fontSize='22px' /></CrxFlex>
+                    <CrxGlassCard w='50px' h='50px'>
+                        <CrxFlex h='100%'><GrGrow fontSize='22px' /></CrxFlex>
                     </CrxGlassCard>
                     <CrxSubTitle2 fs='2rem'>Vision</CrxSubTitle2>
                 </CrxFlex>

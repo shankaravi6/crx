@@ -14,43 +14,22 @@ import RoadmapSection from "./RoadmapSection/RoadmapSection";
 // const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const LandingPage = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const aboutRef = useRef(null);
-
-  useEffect(() => {
-    let timeoutId;
-
-    const handleScroll = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        const bannerHeight = window.innerHeight;
-        const scrollTop = window.scrollY;
-        const progress = Math.min(scrollTop / bannerHeight, 1); // Clamp between 0 and 1
-        setScrollProgress(progress);
-      }, 50); // Throttle scroll updates
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
-    <CrxContainer bg="#000607">
+    <CrxContainer>
       {/* Lazy-load Spline with a fallback */}
       {/* <Suspense fallback={<div style={{ height: "100vh", backgroundColor: "#000607" }}>Loading...</div>}>
         <Spline className="spline-container" scene="https://prod.spline.design/vGYiA9vexcS0gJF5/scene.splinecode" />
       </Suspense> */}
-      <FogEffect />
+      {/* <FogEffect /> */}
       <NavBar />
       <BannerSection />
-      <AboutSection ref={aboutRef} />
+      <AboutSection />
       <ListinSection />
-      <RoadmapSection/>
+      {/* <RoadmapSection/>
       <KeySection />
-      <MissionSection />
-      <PricingSection />
+      <MissionSection /> */}
+      {/* <PricingSection /> */}
     </CrxContainer>
   );
 };

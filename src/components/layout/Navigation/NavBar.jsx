@@ -17,7 +17,7 @@ const NavBar = () => {
     <CrxCover>
       <NavSection h="70px">
         <CrxSection p='10px'>
-          <CrxFlex p="15px 0px" jc="space-between" ai="center">
+          <CrxFlex p="1px 0px" jc="space-between" ai="center">
             <NavLogo />
             <CrxFlex gap="25px" className="nav-links">
               <NavLinks />

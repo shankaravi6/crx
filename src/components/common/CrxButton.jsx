@@ -25,22 +25,22 @@ const mapStateToProps = (state) => ({
 const StyledButton = CrxComponent(styled.button`
   text-align: center;
   letter-spacing: 1.5px;
-  border: 1.85px solid #d6f5f5;
+  border: 1.85px solid ${(props) => props.palette.sec.high};
   border-bottom: none;
   box-shadow: ${(props) => props.palette.shadow.main} 0px;
-  color: ${(props) => props.palette.text.lowmid};
+  color: ${(props) => props.palette.text.low};
   transition: all 0.3s ease;
   font-weight: 400;
   padding: 7px 25px;
-  width: ${(props) => (props.width ? props.width : 'auto')};
+  width: ${(props) => (props.width ? props.width : 'max-content')};
   display: block;
-  border-radius: 10px;
+  border-radius: 50px;
   opacity: 0.75;
   position: relative; /* Needed for pseudo-element positioning */
 
   &:hover {
     opacity: 0.9;
-    border: 1.85px solid #2eb8b8;
+    border: 1.85px solid ${(props) => props.palette.text.high};
     border-bottom: none;
     transition: all 0.3s ease-out;
   }
@@ -54,9 +54,9 @@ const StyledButton = CrxComponent(styled.button`
     transform: translateX(-50%);
     width: 50px; /* Length of the line */
     height: 1.5px; /* Height for rounded line */
-    background: #ff99cc; /* Bright line color ff99cc 2eb8b8*/
-    border-radius: 10px; /* Fully rounded ends */
-    box-shadow: 0 0 10px #f4f3f2; /* Add brightness effect */
+    background: ${(props) => props.palette.sec.mid}; /* Bright line color ff99cc 2eb8b8*/
+    border-radius: 15px; /* Fully rounded ends */
+    //box-shadow: 0 0 10px ${(props) => props.palette.text.low}; /* Add brightness effect */
     animation: pulseLine 1.5s infinite ease-in-out; /* Infinite animation */
   }
 
@@ -89,23 +89,23 @@ const StyledText = CrxComponent(styled.span`
 `)
 
 const StyledOutlineButton = CrxComponent(styled.button`
-  font-size: 100%;
   text-align: center;
-  letter-spacing: 5px;
-  color: ${(props) => props.palette.text.main};
-  background-color: transparent;
-  box-shadow: ${(props) => props.palette.shadow.main} 0px 2px 4px;
+  letter-spacing: 1.5px;
+  border: 1.85px solid ${(props) => props.palette.sec.midhigh};
+  color: ${(props) => props.palette.sec.mid};
   transition: all 0.3s ease;
-  font-weight: 500;
-  padding: 10px 20px;
-  width: ${(props) => (props.width ? props.width : '100%')};
-  border-radius: 5px;
-  border: ${(props) => `1px solid ${colorTokens.drops[200]}`};
+  font-weight: 400;
+  padding: 7px 25px;
+  width: ${(props) => (props.width ? props.width : 'unset')};
+  display: block;
+  border-radius: 50px;
+  opacity: 0.75;
+  position: relative; /* Needed for pseudo-element positioning */
 
   &:hover {
-    box-shadow: ${(props) => props.palette.shadow.main} 0px 5px 15px;
-    background-color: ${(props) => props.palette.background.high};
-    color: ${(props) => (props.mode === "dark" ? colorTokens.drops[200] : colorTokens.drops[800])};
+    opacity: 0.9;
+    border: 1.85px solid ${(props) => props.palette.sec.high};
+    transition: all 0.3s ease-out;
   }
 `);
 

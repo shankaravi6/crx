@@ -5,60 +5,42 @@ import {
   CrxSubTitle,
   CrxTypography,
   CrxBox,
+  CrxImg,
 } from "../../components/styledcomponents/globalStyles";
 import Spline from "@splinetool/react-spline";
 import { Fade, Hinge } from "react-awesome-reveal";
 import './AboutSection.css'
+import CrxButton from "../../components/common/CrxButton";
+import AboutImg from "../../../public/assets/images/about.jpeg"
+import { useThemeContext } from "../../context/theme/ThemeContext";
 
 const AboutSection = forwardRef((props, ref) => {
-  const [isVisible, setIsVisible] = useState(false);
 
-  // Check visibility of the About section
-  const checkVisibility = () => {
-    const rect = ref.current.getBoundingClientRect();
-    const isInView =
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    setIsVisible(isInView);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", checkVisibility);
-    return () => window.removeEventListener("scroll", checkVisibility);
-  }, []);
-
-  // Dynamic gradient style when the section is visible
-  const gradientStyle = isVisible
-    ? {
-        color: "#e1e1e1",
-        animation: "gradientFill 2s forwards", // Animate the gradient fill
-      }
-    : {};
+  const {palette} = useThemeContext();
 
   return (
     <CrxSection>
       <Fade>
       <CrxFlex
-        gap="5rem"
+        gap="7.5rem"
         style={{
           minHeight: "100vh",
-          padding: "50px",
+          padding: "50px 100px",
         }}
       >
         <CrxBox w="100%" className="flex-col gap-5" ref={ref}>
           <Fade direction="up">
-          <CrxSubTitle>About Us</CrxSubTitle>
+          <CrxButton variant='outline'>Who we are</CrxButton>
+          <CrxSubTitle ta='left'>About Us</CrxSubTitle>
           </Fade>
           <Fade direction="up">
-          <CrxTypography className='glass-shade' style={gradientStyle}>
-            CRX is a digital currency that operates as a globally distributed network of computers adhering to the CRX protocol. Serving as a robust infrastructure, CRX empowers communities, applications, organizations, and digital assets, facilitating their creation and utilization. Accessible from anywhere and at any time, you can establish a CRX account to delve into a realm of applications or develop your own. A key breakthrough lies in the ability to engage in these activities without reliance on a central authority capable of altering rules or limiting access.
+          <CrxTypography color={palette.text.low}>
+            CRX is a digital currency that operates as a globally distributed network of computers adhering to the CRX protocol. Serving as a robust infrastructure, CRX empowers communities, applications, organizations, and digital assets, facilitating their creation and utilization.
           </CrxTypography>
           </Fade>
         </CrxBox>
-        <CrxBox w="100%" h="500px">
-          <Spline scene="https://prod.spline.design/VLYqo-y3jEqHlsCC/scene.splinecode" />
+        <CrxBox br='28px' w="100%" h="500px">
+          <CrxImg src={AboutImg} br='35px' />
         </CrxBox>
       </CrxFlex>
       </Fade>

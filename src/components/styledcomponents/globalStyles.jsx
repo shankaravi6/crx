@@ -29,7 +29,7 @@ export const CrxBackground = styled.div`
 
 export const CrxContainer = CrxComponent(styled.div`
   width: 100%;
-  background: ${(props) => (props.bg ? props.bg : `unset`)};
+  background: ${(props) => (props.bg ? props.bg : props.palette.background.high)};
   @media screen and (max-width: 768px) {
     max-width: 1300px;
   }
@@ -41,6 +41,7 @@ export const CrxCenterContainer = CrxComponent(styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: ${(props) => props.br ? props.br : 'unset'};
   background: ${(props) => (props.bg ? props.bg : `unset`)};
   @media screen and (max-width: 768px) {
     max-width: 1300px;
@@ -51,8 +52,9 @@ export const CrxSection = CrxComponent(styled.section`
   width: 100%;
   height: ${(props) => (props.h ? props.h : "unset")};
   max-width: ${(props) => (props.mw ? props.mw : "1300px")};
-  margin: ${(props) => props.m ? props.m : '0 auto'};
+  margin: ${(props) => (props.m ? props.m : "0 auto")};
   background: ${(props) => (props.bg ? props.bg : `unset`)};
+  border-radius: ${(props) => props.br ? props.br : 'unset'};
   padding: ${(props) => (props.p ? props.p : "unset")};
   @media screen and (max-width: 970px) {
     padding: ${(props) => (props.sp ? props.sp : "unset")};
@@ -153,19 +155,18 @@ export const CrxCard = CrxComponent(styled.div`
   height: ${(props) => (props.h ? props.h : "350px")};
   padding: ${(props) => (props.p ? props.p : "auto")};
   margin: ${(props) => (props.m ? props.m : "auto")};
-  border-radius: ${(props) => (props.br ? props.br : "15px")};
+  border-radius: ${(props) => (props.br ? props.br : "28px")};
   background: ${(props) => (props.bg ? props.bg : `unset`)};
-  border: 0.88px solid rgb(255 255 255 / 25%);
+  border: ${(props) => (props.b ? props.b : `unset`)};
   box-shadow: ${(props) => (props.bs ? props.bs : `unset`)};
   transition: all 0.3s ease;
   @media screen and (max-width: 960px) {
-    width: ${(props) => (props.sw ? props.sw : "300px")};
-    height: ${(props) => (props.sh ? props.sh : "300px")};
+    width: ${(props) => (props.sw ? props.sw : "auto")};
+    height: ${(props) => (props.sh ? props.sh : "auto")};
   }
 
   &:hover {
     transition: all 0.3s ease;
-    border: 1px solid rgb(255 255 255 / 35%);
   }
 `);
 
@@ -175,9 +176,9 @@ export const CrxGlassCard = CrxComponent(styled.div`
   padding: ${(props) => (props.p ? props.p : "auto")};
   margin: ${(props) => (props.m ? props.m : "auto")};
   border-radius: ${(props) => (props.br ? props.br : "15px")};
-  background: ${(props) => (props.bg ? props.bg : `rgba(255, 255, 255, .07)`)};
+  background: ${(props) => (props.bg ? props.bg : `unset`)};
   box-shadow: ${(props) => (props.bs ? props.bs : `unset`)};
-  border: 1px solid rgb(255 255 255 / 25%);
+  border: 1px solid ${(props) => props.palette.text.high};
   backdrop-filter: blur(9px);
   transition: all 0.3s ease;
   @media screen and (max-width: 960px) {
@@ -188,8 +189,7 @@ export const CrxGlassCard = CrxComponent(styled.div`
   &:hover {
     transition: all 0.3s ease;
     backdrop-filter: blur(9px);
-    background: ${(props) =>
-      props.bg ? props.bg : `rgba(255, 255, 255, .10)`};
+    background: ${(props) => (props.bg ? props.bg : `unset`)};
   }
 `);
 
@@ -225,10 +225,9 @@ export const CrxMainTitle = CrxComponent(styled.h1`
   font-family: "Satoshi-Med", sans-serif;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(2rem, 10vw, 15rem)")};
   text-align: center;
-  color: ${(props) => (props.color ? props.color : props.palette.text.title)};
+  color: ${(props) => (props.color ? props.color : props.palette.text.high)};
   animation: lights 5s 750ms linear infinite;
   letter-spacing: ${(props) => (props.ls ? props.ls : "unset")};
-
 
   @keyframes lights {
     0% {
@@ -275,30 +274,17 @@ export const CrxMainTitle = CrxComponent(styled.h1`
 
 export const CrxTitle = CrxComponent(styled.h1`
   font-family: "Satoshi-Med", sans-serif;
-  font-size: ${(props) => (props.fs ? props.fs : "clamp(2rem, 10vw, 15rem)")};
+  font-size: ${(props) => (props.fs ? props.fs : "clamp(1.5rem, 10vw, 5rem)")};
   text-align: center;
   letter-spacing: ${(props) => (props.ls ? props.ls : "unset")};
-  color: ${(props) => (props.color ? props.color : props.palette.text.low)};
+  color: ${(props) => (props.color ? props.color : props.palette.sec.midhigh)};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
-  /* animation: glow 5s ease-in-out infinite alternate; */
 
   @media screen and (max-width: 960px) {
     text-align: center;
-    margin-left: ${(props) => (props.s_ml ? props.s_ml : "30px")};
+    margin-left: ${(props) => (props.s_ml ? props.s_ml : "unset")};
   }
-
-  /* @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
-        0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-        0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  } */
   /* &::before {
     content: "";
     display: inline-block;
@@ -323,19 +309,16 @@ export const CrxSubTitleNor = CrxComponent(styled.h1`
   letter-spacing: ${(props) => (props.ls ? props.ls : "0px")};
   color: ${(props) => (props.color ? props.color : "transparent")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
-  background: ${(props) =>
-    props.bg
-      ? props.bg
-      : "linear-gradient(89deg, rgb(255 255 255) 30%, rgb(75 75 75 / 62%) 100%)"};
+  background: ${(props) => (props.bg ? props.bg : props.palette.text.low)};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
   background-clip: text;
   transition: all 0.5s ease;
-  opacity: 0.55;
+  opacity: 0.85;
 
   &:hover {
-    opacity: 0.85;
+    opacity: 1;
     transition: all 1s ease;
   }
 
@@ -358,38 +341,23 @@ export const CrxSubTitle = CrxComponent(styled.h1`
   letter-spacing: ${(props) => (props.ls ? props.ls : "0px")};
   color: ${(props) => (props.color ? props.color : "transparent")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
-  background: ${(props) =>
-    props.bg
-      ? props.bg
-      : "linear-gradient(250deg, rgb(255 255 255) 30%, rgb(4 243 236 / 84%) 100%)"};
+  background: ${(props) => (props.bg ? props.bg : props.palette.sec.high)};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
   background-clip: text;
   transition: all 0.5s ease;
-  opacity: 0.55;
+  opacity: 0.85;
+  display: flex;
+  flex-wrap: wrap;
 
   &:hover {
-    opacity: 0.75;
+    opacity: 1;
     transition: all 0.5 ease;
-    background: ${(props) =>
-      props.bg
-        ? props.bg
-        : "linear-gradient(90deg, rgb(255 255 255) 30%, rgb(4 243 236 / 84%) 100%)"};
+    background: ${(props) => (props.bg ? props.bg : props.palette.text.low)};
     background-clip: text;
     color: transparent;
   }
-
-  /* &::before {
-    content: "";
-    display: inline-block;
-    height: 65px;
-    width: 70px;
-    background: ${(props) => (props.bg ? props.bg : `rgb(61 191 200 / 42%)`)};
-    backdrop-filter: blur(9px);
-    position:absolute;
-    left:-15px;
-  } */
 `);
 
 export const CrxSubTitle2 = CrxComponent(styled.h1`
@@ -399,57 +367,43 @@ export const CrxSubTitle2 = CrxComponent(styled.h1`
   letter-spacing: ${(props) => (props.ls ? props.ls : "0px")};
   color: ${(props) => (props.color ? props.color : "transparent")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
-  background: ${(props) =>
-    props.bg
-      ? props.bg
-      : "linear-gradient(250deg, rgb(255 255 255) 30%, rgba(255, 77, 166) 100%)"};
+  background: ${(props) => (props.bg ? props.bg : props.palette.text.mid)};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
   background-clip: text;
   transition: all 0.5s ease;
-  opacity: 0.55;
+  opacity: 0.85;
 
   &:hover {
-    opacity: 0.85;
+    opacity: 1;
     transition: all 1s ease;
   }
-
-  /* &::before {
-    content: "";
-    display: inline-block;
-    height: 65px;
-    width: 70px;
-    background: ${(props) => (props.bg ? props.bg : `rgb(61 191 200 / 42%)`)};
-    backdrop-filter: blur(9px);
-    position:absolute;
-    left:-15px;
-  } */
 `);
 
 export const CrxNavText = CrxComponent(styled.p`
   font-family: "Satoshi-Reg", serif;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(1rem, 5vw, 1rem)")};
   text-align: center;
-  color: ${(props) => (props.color ? props.color : props.palette.text.low)};
+  color: ${(props) => (props.color ? props.color : props.palette.sec.high)};
   transition: all 0.5s ease;
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   background: ${(props) => (props.bg ? props.bg : "unset")};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
-  opacity: 0.9;
+  opacity: 0.95;
 
   &::after {
     content: "";
     display: block;
     width: 0%;
     opacity: 0;
-    border-bottom: ${(props) => `2px solid ${props.palette.text.nav}`};
+    border-bottom: ${(props) => `2px solid ${props.palette.sec.high}`};
   }
 
   &:hover::after {
-    opacity: 0.7;
+    opacity: 0.75;
     width: 100%;
     transition: all 0.5s ease;
   }
@@ -462,11 +416,11 @@ export const CrxTypography = CrxComponent(styled.p`
   font-family: ${(props) => (props.fm ? props.fm : "Satoshi-Reg, sans-serif")};
   padding: ${(props) => props.p};
   margin: ${(props) => props.m};
-  color: ${(props) => (props.color ? props.color : props.palette.text.lowmid)};
+  color: ${(props) => (props.color ? props.color : props.palette.text.mid)};
   text-align: ${(props) => (props.ta ? props.ta : "justify")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   text-transform: ${(props) => (props.tt ? props.tt : "unset")};
-  opacity: 0.75;
+  opacity: 0.85;
 `);
 
 export const CrxSpan = CrxComponent(styled.span`
@@ -476,7 +430,7 @@ export const CrxSpan = CrxComponent(styled.span`
   font-family: ${(props) => (props.fm ? props.fm : `Satoshi-Reg, sans-serif`)};
   padding: ${(props) => props.p};
   margin: ${(props) => props.m};
-  color: ${(props) => (props.color ? props.color : props.palette.text.main)};
+  color: ${(props) => (props.color ? props.color : props.palette.text.low)};
   text-align: ${(props) => (props.ta ? props.ta : "justify")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   font-style: ${(props) => (props.fst ? props.fst : "normal")};

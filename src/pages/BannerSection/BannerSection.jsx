@@ -9,6 +9,7 @@ import {
   CrxTitle,
 } from "../../components/styledcomponents/globalStyles";
 import CrxButton from "../../components/common/CrxButton";
+import { Fade } from "react-awesome-reveal";
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
 const BannerSection = ({ scrollProgress }) => {
@@ -18,32 +19,25 @@ const BannerSection = ({ scrollProgress }) => {
   const transitionDuration = "0.3s ease-out"; // Smooth transition
 
   return (
-    <CrxSection m='-2.25rem auto 0 auto'>
-      {/* <CrxCenterContainer className="flex-col gap-5">
+    <CrxSection>
+      <Fade>
+      <CrxCenterContainer br='28px' p='3rem' bg='linear-gradient(to left bottom, #8dccf4, #95d8f7, #a0e4fa, #afeffc, #bffaff);'  className="flex-col gap-5">
         <CrxFlex
-          style={{
-            position: "relative",
-            top: 0,
-            transform: `scale(${scale})`,
-            opacity: opacity,
-            transition: `transform ${transitionDuration}, opacity ${transitionDuration}`,
-            display: "flex",
-            width:"100%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
           dir="column"
-          m="-155px 0 0 0"
+          p='0 10rem'
+          gap='2rem'
+          sw='inherit'
         >
-          <CrxMainTitle fs="5rem" ls='0.5rem'>CRX FOR LIFE</CrxMainTitle>
-          <CrxTypography color='#b1e7dd' fs="2rem">
+          <CrxTitle ls='0.5rem'>CRX FOR LIFE</CrxTitle>
+          <CrxTypography fs="2rem">
             Welcome to CRX, where the future of digital currency and
             decentralized finance comes to life.
           </CrxTypography>
           <CrxButton>Associate Login</CrxButton>
         </CrxFlex>
-      </CrxCenterContainer> */}
-      <Suspense
+      </CrxCenterContainer>
+      </Fade>
+      {/* <Suspense
         fallback={
           <CrxTypography style={{ height: "100vh", backgroundColor: "#000607" }}>
             Loading...
@@ -51,7 +45,7 @@ const BannerSection = ({ scrollProgress }) => {
         }
       >
         <Spline scene="https://prod.spline.design/ys0Dc4M3vyVpPCh0/scene.splinecode" />
-      </Suspense>
+      </Suspense> */}
     </CrxSection>
   );
 };
