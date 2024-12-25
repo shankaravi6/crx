@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <CrxCover>
-      <NavSection h="70px">
+      <NavSection className='nav-bar' h="65px">
         <CrxSection p='10px'>
           <CrxFlex p="1px 0px" jc="space-between" ai="center">
             <NavLogo />

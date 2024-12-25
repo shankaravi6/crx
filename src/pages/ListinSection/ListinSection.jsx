@@ -19,7 +19,7 @@ const ListinSection = () => {
           Running a successful business means more than just a website. That's why we cover all your design needs, so you don't have to go anywhere else.
           </CrxTypography>
           <Zoom>
-          <CrxCard bg={colorTokens.drops[110]} bs='rgba(0, 0, 0, 0.24) 0px 3px 8px;' m='3.5rem 0 0 0' p='2.5rem 0' w='1000px' h='auto'>
+          <CrxGlassCard m='3.5rem 0 0 0' p='2.5rem 0' w='1000px' h='auto'>
         
           <CrxFlex dir='column' gap='3rem'>
             <CrxFlex gap='5rem'>
@@ -35,7 +35,7 @@ const ListinSection = () => {
               <CrxSubTitleNor color={colorTokens.drops[700]} fs='1.8rem'>ICO Holder</CrxSubTitleNor>
             </CrxFlex>
             </CrxFlex>
-          </CrxCard>
+          </CrxGlassCard>
           </Zoom>
 
         </CrxFlex>

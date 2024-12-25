@@ -56,7 +56,8 @@ export const themeSettings = (mode) => {
         : {
             // palette values for light mode
             background: {
-              high: colorTokens.drops[100],
+              high: colorTokens.drops[0],
+              midhigh: colorTokens.drops[400],
               mid: colorTokens.drops[120],
               low: colorTokens.drops[150],
             },

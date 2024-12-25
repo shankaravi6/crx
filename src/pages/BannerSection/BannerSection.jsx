@@ -9,7 +9,7 @@ import {
   CrxTitle,
 } from "../../components/styledcomponents/globalStyles";
 import CrxButton from "../../components/common/CrxButton";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
 const BannerSection = ({ scrollProgress }) => {
@@ -19,9 +19,9 @@ const BannerSection = ({ scrollProgress }) => {
   const transitionDuration = "0.3s ease-out"; // Smooth transition
 
   return (
-    <CrxSection>
-      <Fade>
-      <CrxCenterContainer br='28px' p='3rem' bg='linear-gradient(to left bottom, #8dccf4, #95d8f7, #a0e4fa, #afeffc, #bffaff);'  className="flex-col gap-5">
+    <CrxSection p='5rem 0 0 0'>
+      <Slide direction="up" triggerOnce duration='1000'>
+      <CrxCenterContainer br='28px 28px 28px 28px' p='3rem' bg='linear-gradient(to left bottom, #8dccf4, #95d8f7, #a0e4fa, #afeffc, #bffaff);'  className="flex-col gap-5">
         <CrxFlex
           dir="column"
           p='0 10rem'
@@ -36,7 +36,7 @@ const BannerSection = ({ scrollProgress }) => {
           <CrxButton>Associate Login</CrxButton>
         </CrxFlex>
       </CrxCenterContainer>
-      </Fade>
+      </Slide>
       {/* <Suspense
         fallback={
           <CrxTypography style={{ height: "100vh", backgroundColor: "#000607" }}>

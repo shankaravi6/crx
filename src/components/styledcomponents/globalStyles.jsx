@@ -175,21 +175,21 @@ export const CrxGlassCard = CrxComponent(styled.div`
   height: ${(props) => (props.h ? props.h : "350px")};
   padding: ${(props) => (props.p ? props.p : "auto")};
   margin: ${(props) => (props.m ? props.m : "auto")};
-  border-radius: ${(props) => (props.br ? props.br : "15px")};
-  background: ${(props) => (props.bg ? props.bg : `unset`)};
-  box-shadow: ${(props) => (props.bs ? props.bs : `unset`)};
-  border: 1px solid ${(props) => props.palette.text.high};
-  backdrop-filter: blur(9px);
+  border-radius: ${(props) => (props.br ? props.br : "28px")};
+  background: ${(props) => (props.bg ? props.bg : `rgba(255, 255, 255, 0.2)`)};
+  box-shadow: ${(props) => (props.bs ? props.bs : `0 4px 30px rgba(0, 0, 0, 0.1)`)};
+  border: 1px solid ${(props) => props.b ? props.b : 'rgba(255, 255, 255, 0.3)'};
+  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   @media screen and (max-width: 960px) {
-    width: ${(props) => (props.sw ? props.sw : "300px")};
-    height: ${(props) => (props.sh ? props.sh : "300px")};
+    width: ${(props) => (props.sw ? props.sw : "auto")};
+    height: ${(props) => (props.sh ? props.sh : "auto")};
   }
 
   &:hover {
     transition: all 0.3s ease;
-    backdrop-filter: blur(9px);
-    background: ${(props) => (props.bg ? props.bg : `unset`)};
+    backdrop-filter: blur(5px);
+    background: ${(props) => (props.bg ? props.bg : `rgba(255, 255, 255, 0.3)`)};
   }
 `);
 

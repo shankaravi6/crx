@@ -16,7 +16,8 @@ import RoadmapSection from "./RoadmapSection/RoadmapSection";
 const LandingPage = () => {
 
   return (
-    <CrxContainer>
+    <CrxContainer bg='linear-gradient(to left bottom, #d2e9f8, #c2ecffcc, #b8fcffb0, #b3e5f0eb, #bffaff)'>
+    {/* bg='linear-gradient(to left bottom, #d2e9f8, #c2ecffcc, #a7dced42, #b3e5f0eb, #bffaff)' */}
       {/* Lazy-load Spline with a fallback */}
       {/* <Suspense fallback={<div style={{ height: "100vh", backgroundColor: "#000607" }}>Loading...</div>}>
         <Spline className="spline-container" scene="https://prod.spline.design/vGYiA9vexcS0gJF5/scene.splinecode" />

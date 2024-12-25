@@ -8,7 +8,7 @@ import {
   CrxImg,
 } from "../../components/styledcomponents/globalStyles";
 import Spline from "@splinetool/react-spline";
-import { Fade, Hinge } from "react-awesome-reveal";
+import { Fade, Hinge, Slide } from "react-awesome-reveal";
 import './AboutSection.css'
 import CrxButton from "../../components/common/CrxButton";
 import AboutImg from "../../../public/assets/images/about.jpeg"
@@ -45,6 +45,7 @@ const AboutSection = forwardRef((props, ref) => {
       </CrxFlex>
       </Fade>
     </CrxSection>
+    
   );
 });
 
